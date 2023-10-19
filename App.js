@@ -1,15 +1,18 @@
 /*ReactElement(object)=>HTML(browser understands)*/
 import React from "react";
 import ReactDOM from "react-dom/client";
-
-const parent = React.createElement(
-  "div",
-  { id: "parent" },
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", { id: "heading" }, "I am a nested structure"),
-    React.createElement("h2", { id: "heading2" }, "I am a sibling"),
-  ])
+const Title = () => (
+  <h2 className="head" tabIndex={5}>
+    Welcome to Namaste React🚀
+  </h2>
 );
-console.log(parent); //object
+const Headingcomponent = () => (
+  <div className="container">
+    {Title()}
+    <Title />
+    <Title></Title>
+    <h1 className="heading">hello from the functional component</h1>
+  </div>
+);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+root.render(<Headingcomponent />);
