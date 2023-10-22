@@ -4,6 +4,21 @@
   padding: 0;
 }
 
+.m-primary {
+  margin: 1.5vw 1vw;
+}
+.m-secondary {
+  margin: 0.8vw;
+}
+.side-margin {
+  margin: 0 0.8vw;
+}
+.top-margin-primary {
+  margin-top: 1vw;
+}
+.top-margin-secondary {
+  margin-top: 0.5vw;
+}
 /* header */
 
 .header {
@@ -13,7 +28,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid black;
+  background-color: black;
+  color: white;
   font-size: 1.2vw;
 }
 .logo {
@@ -33,4 +49,71 @@
 
 .nav-items li {
   list-style-type: none;
+  cursor: pointer;
+}
+
+/* Body of the App */
+.body {
+  width: 100%;
+}
+/* search bar */
+.searchBox {
+  width: 35%;
+}
+#searchBar {
+  width: 70%;
+  height: 2vw;
+  padding: 0.5vw 0.8vw;
+}
+
+.search-btn {
+  width: 20%;
+  border: 1px solid black;
+  height: 2vw;
+  cursor: pointer;
+}
+.search-btn:hover {
+  background-color: rgb(171, 171, 171);
+}
+
+/* Restaurant cards */
+.res-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.res-card {
+  width: 15%;
+  height: 24vw;
+  padding: 0.5vw;
+  background-color: rgb(242, 242, 242);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s;
+}
+.res-card:hover {
+  box-shadow: 0 0 5px rgb(49, 49, 49);
+  transform: scale(1.02);
+}
+.res-card-image {
+  width: 100%;
+  height: 50%;
+}
+.res-rating {
+  display: flex;
+  margin: 0.3vw 0;
+  text-align: center;
+  align-items: center;
+}
+
+.cuisine {
+  color: rgb(118, 118, 118);
+}
+.res-description {
+  display: flex;
+  flex-direction: column;
+}
+.res-costForTwo {
+  position: absolute;
+  bottom: 4;
 }
