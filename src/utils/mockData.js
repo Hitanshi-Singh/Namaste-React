@@ -1,62 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          src="https://png.pngtree.com/png-clipart/20230106/original/pngtree-simple-and-modern-food-logo-vector-design-png-image_8876455.png"
-          alt="logo"
-          className="logo"
-        />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const SearchBox = () => (
-  <div className="searchBox m-secondary">
-    <input type="search" name="" id="searchBar" className="side-margin" />
-    <button className="search-btn">Search</button>
-  </div>
-);
-
-const RestaurantCard = (props) => {
-  const { resData } = props;
-  const { name, avgRating, sla, cuisines, costForTwo } = resData?.info;
-  return (
-    <div className="res-card m-secondary">
-      <img
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          resData.info.cloudinaryImageId
-        }
-        alt=""
-        className="res-card-image"
-      />
-      <div className="res-details">
-        <h2 className="top-margin-primary">{name}</h2>
-        <div className="res-description">
-          <div className="res-rating ">
-            <h4>{avgRating}⭐ •</h4>
-            <p className="side-margin">{sla.slaString}</p>
-          </div>
-          <p className="cuisine ">{cuisines.join(", ")}</p>
-          <h3 className="res-costForTwo">{costForTwo}</h3>
-        </div>
-      </div>
-    </div>
-  );
-};
 const resList = [
   {
     info: {
@@ -466,6 +407,7 @@ const resList = [
       cloudinaryImageId: "lqk6gqvpl7hr0mdfymce",
       locality: "Rasool garh",
       areaName: "Sarnath",
+      avgRating: 2.8,
       costForTwo: "₹90 for two",
       cuisines: ["Snacks"],
       veg: true,
@@ -847,6 +789,7 @@ const resList = [
       cloudinaryImageId: "a7a03243fb0d966d97aa1de631aed450",
       locality: "Bhullanpur",
       areaName: "IIT",
+      avgRating: 4.3,
       costForTwo: "₹300 for two",
       cuisines: ["Indian", "Rajasthani"],
       veg: true,
@@ -925,26 +868,4 @@ const resList = [
   },
 ];
 
-const Body = () => {
-  return (
-    <div className="body">
-      <SearchBox />
-      <div className="res-container">
-        {resList.map((element) => (
-          <RestaurantCard key={element.info.id} resData={element} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+export default resList;
