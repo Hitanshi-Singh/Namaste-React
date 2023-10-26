@@ -2,6 +2,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
+}
+img {
+  border-radius: 10px;
 }
 
 .m-primary {
@@ -28,9 +32,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
-  color: white;
+
   font-size: 1.2vw;
+  box-shadow: -2px 0 5px gray;
 }
 .logo {
   padding: 0;
@@ -43,7 +47,7 @@
 }
 .nav-items ul {
   display: flex;
-
+  align-items: center;
   justify-content: space-evenly;
 }
 
@@ -51,10 +55,23 @@
   list-style-type: none;
   cursor: pointer;
 }
+.nav-items button {
+  padding: 0.5vw 0.8vw;
+  cursor: pointer;
+  font-size: 1.2vw;
 
+  border-radius: 5px;
+}
+.nav-items button:hover {
+  background-color: rgb(221, 219, 219);
+}
 /* Body of the App */
 .body {
   width: 100%;
+}
+/* FILTERS */
+.filters {
+  display: flex;
 }
 /* search bar */
 .searchBox {
@@ -81,10 +98,11 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  font-size: 0.9vw;
 }
 .res-card {
   width: 15%;
-
+  border-radius: 10px;
   padding: 0.5vw;
   background-color: rgb(242, 242, 242);
   cursor: pointer;
@@ -116,4 +134,36 @@
 .res-costForTwo {
   position: absolute;
   bottom: 4;
+}
+/* Shimmer CSS */
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.shimmer-card {
+  width: 15%;
+  height: 20vw;
+  padding: 0.5vw;
+  border: 1px solid rgb(217, 215, 215);
+}
+
+.shimmer-img {
+  height: 50%;
+  width: 100%;
+  margin-bottom: 0.3vw;
+  background-color: rgb(217, 215, 215);
+}
+.shimmer-details {
+  width: 6vw;
+  height: 0.5vw;
+  background-color: rgb(217, 215, 215);
+}
+.shimmer-details-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
