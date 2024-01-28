@@ -5,14 +5,14 @@ const RestaurantCard = (props) => {
   const { name, avgRating, sla, cuisines, costForTwo, cloudinaryImageId } =
     resData?.info;
   return (
-    <div className="res-card m-secondary">
+    <div className="w-56 h-80 p-3 m-2 rounded-xl bg-gray-100 hover:shadow-lg">
       <img
         src={CDN_URL + cloudinaryImageId}
         alt=""
-        className="res-card-image"
+        className="w-full h-28 object-cover rounded-xl"
       />
       <div className="res-details">
-        <h2 className="top-margin-primary">{name}</h2>
+        <h2 className="my-2 font-bold">{name}</h2>
         <div className="res-description">
           <div className="res-rating ">
             <h4>{avgRating}⭐ •</h4>
@@ -25,5 +25,19 @@ const RestaurantCard = (props) => {
     </div>
   );
 };
-
+export const HighRating = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div className="relative">
+        <label
+          htmlFor=""
+          className="absolute top-2 bg-black text-white p-1 rounded-xl"
+        >
+          Foodie's Choice
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
+};
 export default RestaurantCard;
